@@ -24,7 +24,7 @@ names(dtAll) <- c("Subject", "Activity", features$V2)
 # 4. Apply descriptive activity names to name the activities in the data set
 library(dplyr)
 tdAll <- tbl_df(dtAll)
-tdAll <- tdAll[names(tdAll)=="Subject" | names(tdAll)=="Activity"| grepl("_mean_", names(tdAll)) | grepl("_std_", names(tdAll))]
+tdAll <- tdAll[grepl("Subject|Activity|_mean_|_std_", names(tdAll))]
 tdAll <- mutate(tdAll, Activity = activities$V2[Activity])
 # 5. Creates a second, independent tidy data set with the average of each variable for each activity and each subject.
 tdGroups <- group_by(tdAll, Subject, Activity)
