@@ -20,27 +20,32 @@ setwd("~/UCI HAR Dataset")
   activities <- read.table("activity_labels.txt", as.is=TRUE)
   ```
   1. Merge the training and the test sets to create one data set.
+  
   ```r
     dtAll <- rbind(cbind(subject_train, y_train, X_train), cbind(subject_test, y_test, X_test))
     rm(X_test, y_test, subject_test, X_train, y_train, subject_train)
   ```
   2. Appropriately label the data set with descriptive variable names.
+  
   ```r
     features$V2 <- gsub("\\(\\)", "_", features$V2)
     features$V2 <- gsub("\\-", "_", features$V2)
     names(dtAll) <- c("Subject", "Activity", features$V2)
   ```
   3. Extract only the measurements on the mean and standard deviation for each measurement.
+  
   ```r  
     library(dplyr)
     tdAll <- tbl_df(dtAll)
     tdAll <- tdAll[grepl("Subject|Activity|_mean_|_std_", names(tdAll))]
   ```r  
   4. Apply descriptive activity names to name the activities in the data set
+  
   ```r  
     tdAll <- mutate(tdAll, Activity = activities$V2[Activity])
   ```  
   5. Creates a second, independent tidy data set with the average of each variable for each activity and each subject.
+  
   ```r  
     tdGroups <- group_by(tdAll, Subject, Activity)
     cols <- names(tdAll)[-(1:2)]
@@ -48,6 +53,7 @@ setwd("~/UCI HAR Dataset")
     tdMeanGroup <- do.call(summarise, c(list(.data=tdGroups), dots))
   ```  
   6. Write into a text file.
+  
   ```r
     write.table(tdMeanGroup, "tidyMeanData.txt", row.names=F, quote = F)
   ```
