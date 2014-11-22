@@ -1,9 +1,19 @@
-## Code Book for `run_analysis.R`
+Code Book for `run_analysis.R`
 ===========
 
 This code book explains how all of the scripts work and how they are connected to clean and tidy the data for the project. Following is what is inside `run_analysis.R`.
 
-## Data preparation  
+## Variables
+  -X_test: table content from `test/X_test.txt`
+  -y_test: table content from `test/y_test.txt`
+  -subject_test: table content from `test/subject_test.txt`
+  -X_train: table content from `train/X_train.txt`
+  -y_train: table content from `train/y_train.txt`
+  -subject_train: table content from `train/subject_train.txt`
+  -features: table content from `features.txt`
+  -activities: table content from `activity_labels.txt`
+
+## Data Analysis Process  
 Set up the work directory:
 
 ```r
