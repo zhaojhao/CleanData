@@ -5,10 +5,12 @@ This code book explains how all of the scripts work and how they are connected t
 
 ## Data preparation  
 Set up the work directory:
+
 ```r
 setwd("~/UCI HAR Dataset")
 ```
   0. read in data
+  
   ```r
   X_test <- read.table("test/X_test.txt")
   y_test <- read.table("test/y_test.txt")
@@ -38,7 +40,7 @@ setwd("~/UCI HAR Dataset")
     library(dplyr)
     tdAll <- tbl_df(dtAll)
     tdAll <- tdAll[grepl("Subject|Activity|_mean_|_std_", names(tdAll))]
-  ```r  
+  ``` 
   4. Apply descriptive activity names to name the activities in the data set
   
   ```r  
