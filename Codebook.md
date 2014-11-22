@@ -13,8 +13,8 @@ This code book explains how all of the scripts work and how they are connected t
   - `subject_train`: table content from `train/subject_train.txt`, subject ids for training set.
   - `features`: table content from `features.txt`, descriptive variable names but some symbols need to be removed.
   - `activities`: table content from `activity_labels.txt`, descriptive activity names that can be used to replace the activity ids.
-  - tdAll: data content after the step 4, with descriptive variable names and activity labes.
-  - tdMeanGroup: the second data content after the step 5, with the mean values of all the variables for different objects and activities.
+  - `tdAll`: data content after the step 4, with descriptive variable names and activity labes.
+  - `tdMeanGroup`: the second data content after the step 5, with the mean values of all the variables for different objects and activities.
 
 ## Data Analysis Process  
   Set up the work directory:
