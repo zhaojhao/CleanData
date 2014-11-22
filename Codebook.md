@@ -11,15 +11,17 @@ This code book explains how all of the scripts work and how they are connected t
   - X_train: table content from `train/X_train.txt`
   - y_train: table content from `train/y_train.txt`
   - subject_train: table content from `train/subject_train.txt`
-  - features: table content from `features.txt`
-  - activities: table content from `activity_labels.txt`
+  - features: table content from `features.txt`, descriptive variable names but some symbols need to be removed.
+  - activities: table content from `activity_labels.txt`, descriptive activity names that can be used to replace the activity ids.
+  - tdAll: data content after the step 4, with descriptive variable names and activity labes.
+  - tdMeanGroup: the second data content after the step 5, with the mean values of all the variables for different objects and activities.
 
 ## Data Analysis Process  
-Set up the work directory:
+  Set up the work directory:
 
-```r
-setwd("~/UCI HAR Dataset")
-```
+  ```r
+  setwd("~/UCI HAR Dataset")
+  ```
   0. read in data
   
   ```r
@@ -70,3 +72,5 @@ setwd("~/UCI HAR Dataset")
   ```r
     write.table(tdMeanGroup, "tidyMeanData.txt", row.names=F, quote = F)
   ```
+## Comments
+The data may be further broken down to shorter and more readable variable names, however, the data would become very complicated with different measures on the same devices, so we will end up here. 
