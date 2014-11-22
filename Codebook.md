@@ -5,14 +5,14 @@ This code book explains how all of the scripts work and how they are connected t
 
 ## Variables
 
-  - X_test: table content from `test/X_test.txt`
-  - y_test: table content from `test/y_test.txt`
-  - subject_test: table content from `test/subject_test.txt`
-  - X_train: table content from `train/X_train.txt`
-  - y_train: table content from `train/y_train.txt`
-  - subject_train: table content from `train/subject_train.txt`
-  - features: table content from `features.txt`, descriptive variable names but some symbols need to be removed.
-  - activities: table content from `activity_labels.txt`, descriptive activity names that can be used to replace the activity ids.
+  - `X_test`: table content from `test/X_test.txt`, bare test dataset from the measurements.
+  - `y_test`: table content from `test/y_test.txt`, activity ids for test set.
+  - `subject_test`: table content from `test/subject_test.txt`, subject ids for test set.
+  - `X_train`: table content from `train/X_train.txt`, bare training dataset from the measurements.
+  - `y_train`: table content from `train/y_train.txt`, activity ids for traing set.
+  - `subject_train`: table content from `train/subject_train.txt`, subject ids for training set.
+  - `features`: table content from `features.txt`, descriptive variable names but some symbols need to be removed.
+  - `activities`: table content from `activity_labels.txt`, descriptive activity names that can be used to replace the activity ids.
   - tdAll: data content after the step 4, with descriptive variable names and activity labes.
   - tdMeanGroup: the second data content after the step 5, with the mean values of all the variables for different objects and activities.
 
